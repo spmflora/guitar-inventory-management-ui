@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitar Search UI</title>
+    <style>
+        a:link{
+            text-decoration: none;
+            color: inherit;
+        }
+        a:visited{
+            text-decoration: none;
+            color: inherit;
+        }
+        a:hover{
+            text-decoration: none;
+            color: inherit;
+        }
+        a:active{
+            text-decoration: none;
+            color: inherit;
+        }
+        .links-right{
+            color: black;
+            float: right;
+            font-family: Verdana;
+            font-weight:bolder;
+            font-size: 35px;
+            
+
+        }
+        body{
+            background-color: tan;
+            flex-wrap:nowrap;
+        }
+        .Title-Link{
+            color:rgb(226, 129, 19);
+            font-size:20px;
+            float :left;
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+        }
+        .top{
+            width: 100%;
+            display : flex;
+            flex-direction: row;
+            justify-content: space-between;
+            
+        }
+        .fillables{
+            display : flex;
+            justify-content: right;
+            flex-wrap: wrap;
+            flex-direction : row;
+            font-size: 42px;
+
+        }
+        .item{
+            display: flex;
+            justify-content: left;
+            width : 80%;
+        }
+        .buttonOn{
+            display: flex;
+            justify-content: left;
+            width : 80%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="Title-Link">
+            <a href="index.html">Guitar Inventory <br/> Managment</a>
+        </div>
+        <div class="links-right">
+            <a href="about.html">About</a>
+            <a href="add.html">Add</a>
+            <a href="search.html">Search</a>
+        </div>
+    </div>
+    <br />
+    <div class ="fillables">
+        <div class = "item">
+            <label>Serial Number:</label>
+            <input id="Sn"/>
+        </div>
+        <div class="item">
+            <label>Price:</label>
+            <input id="pr" />
+        </div>
+        <div class="item">
+            <label>Builder:</label>
+            <input id="b"/>
+        </div>
+        <div class="item">
+            <label>Model:</label>
+            <input id="m"/>
+        </div>
+        <div class="item">
+            <label>Type:</label>
+            <input id="t" />
+        </div>
+        <div class="item">
+            <label>Back Wood:</label>
+            <input id="bW"/>
+        </div>
+        <div class="item">
+            <label>Top Wood:</label>
+            <input id="tW"/>
+        </div>
+        <div class="buttonOn">
+            <button onclick="addTheGuitar()">Add the guitar</button>
+        </div>
+    </div>
+    <script>
+        function addTheGuitar(){
+            let SerialNuNode = document.getElementById("Sn");
+            let SerialNu = SerialNuNode.value;
+            let PriceNode = document.getElementById("pr");
+            let Price = PriceNode.value;
+            let BuilderNode = document.getElementById("b");
+            let Builder = BuilderNode.value;
+            let ModelNode = document.getElementById("m");
+            let Model = ModelNode.value;
+            let TypeNode = document.getElementById("t");
+            let Type = TypeNode.value;
+            let BackWoodNode = document.getElementById("bW");
+            let BackWood = BackWoodNode.value;
+            let TopWoodNode = document.getElementById("tW");
+            let TopWood = TopWoodNode.value;
+            let guitar = {sN : SerialNu, p : Price, b : Builder, m : Model, t : Type, bW : BackWood, tW : TopWood};
+            alert("You Entered: " + JSON.stringify(guitar));
+        }
+    </script>
+</body>
+</html>
